@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --azul_claro: #22D4FD;
+    --fonte_primaria: 'Krona One', sans-serif;
+    --fonte_secundaria: 'Montserrat', sans-serif; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #03001C;
+    color: #F6F6F6;
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho-menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho-menu-link {
+    font-family: var(--fonte_secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--azul_claro);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.titulo {
+    font-size: 2.25rem;
+    font-family: var(--fonte_primaria);
+}
+
+.titulo-destaque {
+    color: var(--azul_claro);
+}
+
+.texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte_secundaria)
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.links-subtitulo {
+    font-family: var(--fonte_primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.links-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--azul_claro);
+    width: 60%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    color: #F6F6F6;
+    text-decoration: none;
+    font-family: var(--fonte_secundaria);
+}
+
+.links-social:hover {
+    background-color: #272727;
+}
+
+.rodape {
+    color: #000000;
+    background-color: var(--azul_claro);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fonte_secundaria);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.img-perfil {
+    width: 40%;
+    border-radius: 20px 0 20px 0;
+}
+
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho-menu{
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .conteudo {
+        width: auto;
+    }
+}
