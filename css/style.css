@@ -112,6 +112,13 @@ body {
     border-radius: 20px 0 20px 0;
 }
 
+.homologacao {
+    background-color: red;
+    color: white; 
+    text-align: center; 
+    padding: 10px;
+  }
+
 @media (max-width: 1200px) {
     .cabecalho {
         padding: 10%;
