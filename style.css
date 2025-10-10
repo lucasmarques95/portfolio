@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Dracula Theme Colors */
+  --dracula-bg: #282a36;
+  --dracula-current: #44475a;
+  --dracula-selection: #44475a;
+  --dracula-foreground: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #8be9fd;
+  --dracula-green: #50fa7b;
+  --dracula-orange: #ffb86c;
+  --dracula-pink: #ff79c6;
+  --dracula-purple: #bd93f9;
+  --dracula-red: #ff5555;
+  --dracula-yellow: #f1fa8c;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--dracula-bg);
+  color: var(--dracula-foreground);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--dracula-purple) 0%,
+    var(--dracula-pink) 25%,
+    var(--dracula-cyan) 50%,
+    var(--dracula-green) 75%,
+    var(--dracula-yellow) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(
+    45deg,
+    var(--dracula-purple),
+    var(--dracula-pink),
+    var(--dracula-cyan)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(189, 147, 249, 0.3);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: var(--dracula-cyan);
+  font-weight: 300;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sections */
+section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: rgba(68, 71, 90, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 233, 253, 0.2);
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  border-color: var(--dracula-purple);
+  box-shadow: 0 8px 32px rgba(189, 147, 249, 0.2);
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--dracula-pink);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--dracula-purple),
+    var(--dracula-cyan)
+  );
+  animation: widthPulse 2s ease infinite;
+}
+
+@keyframes widthPulse {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 60%;
+  }
+}
+
+/* About Section */
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--dracula-foreground);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: rgba(40, 42, 54, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(189, 147, 249, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-card:hover {
+  border-color: var(--dracula-purple);
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(189, 147, 249, 0.3);
+}
+
+.skill-card h3 {
+  color: var(--dracula-green);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card ul {
+  list-style: none;
+}
+
+.skill-card li {
+  padding: 0.5rem 0;
+  color: var(--dracula-foreground);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skill-card li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--dracula-cyan);
+  font-size: 1.2rem;
+}
+
+/* Experience Section */
+.experience-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(40, 42, 54, 0.5);
+  border-radius: 8px;
+  border-left: 4px solid var(--dracula-purple);
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  border-left-color: var(--dracula-pink);
+  background: rgba(40, 42, 54, 0.7);
+  transform: translateX(10px);
+}
+
+.experience-item h3 {
+  color: var(--dracula-yellow);
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.experience-item p {
+  color: var(--dracula-foreground);
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--dracula-current);
+  color: var(--dracula-comment);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+}
